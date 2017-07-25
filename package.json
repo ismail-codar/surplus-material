@@ -1,0 +1,40 @@
+{
+  "name": "surplus-material",
+  "version": "1.0.0",
+  "description": "surplus material design components",
+  "main": "dist/surplus-material.js",
+  "scripts": {
+    "build": "webpack -p",
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ismail-codar/surplus-material.git"
+  },
+  "keywords": [
+    "surplus",
+    "material",
+    "design"
+  ],
+  "author": "ismail codar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ismail-codar/surplus-material/issues"
+  },
+  "homepage": "https://github.com/ismail-codar/surplus-material#readme",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "simplester": "git+https://github.com/ismail-codar/simplester.git",
+    "surplus": "^0.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.15",
+    "awesome-typescript-loader": "^3.2.1",
+    "loglevel": "^1.4.1",
+    "surplus-loader": "^0.4.4",
+    "webpack": "^3.3.0",
+    "webpack-bundle-analyzer": "^2.8.3",
+    "webpack-dev-server": "^2.6.0"
+  }
+}
