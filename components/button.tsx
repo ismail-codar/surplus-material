@@ -3,6 +3,7 @@ import S from "s-js";
 Surplus;
 import * as cx from 'classnames';
 import { DataSignal } from "s-js";
+import onmouse, { MouseEventType } from 'surplus-mixin-onmouse';
 
 export type MdcIntentitonType = "primary" | "accent"
 
@@ -11,12 +12,14 @@ export interface MdcButtonProps {
     raised?: DataSignal<boolean>
     dense?: DataSignal<boolean>
     intention?: DataSignal<MdcIntentitonType>
+    disabled?: DataSignal<boolean>
+    mouseEvent?: { name: MouseEventType, listener: (evt: MouseEvent) => void }
 }
 
 
 export const MdcButton = (props: MdcButtonProps) => {
     const btn =
-        <button className={cx({
+        <button {...(props.mouseEvent ? onmouse(props.mouseEvent.name, props.mouseEvent.listener) : null) } disabled={props.disabled && props.disabled()} className={cx({
             "mdc-button": true,
             "button": true,
             "mdc-button--raised": props.raised && props.raised(),
