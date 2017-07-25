@@ -1,5 +1,5 @@
 # surplus-material (under development)
-Material design components for surplus
+Material design components for [surplus](https://github.com/adamhaile/surplus)
 ## Usage 
 
 ```bash
@@ -12,7 +12,7 @@ npm run start
 ```
 
 ## Note
-Current code is only running [surplus](https://github.com/adamhaile/surplus/tree/master) master branch. Copy the https://github.com/adamhaile/surplus/tree/master/packages folder content to your node node_modules
+Current code is only running [surplus](https://github.com/adamhaile/surplus/tree/master) master branch. Please replace https://github.com/adamhaile/surplus/tree/master/packages folder contents to node_modules folder.
 
 ## Status
 It's just at the start and only the button component is implemented.

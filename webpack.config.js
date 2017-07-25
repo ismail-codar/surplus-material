@@ -18,17 +18,11 @@ const webpackConfig = {
 		}
 	},
 	devtool: "sourcemap",
-	resolveLoader: {
-		alias: {
-			dottedidentifierremover: require.resolve("./webpack-custom-util/dotted-identifier-remover.js")
-		}
-	},
 	module: {
 		rules: [
 			{
 				test: /\.tsx?$/, use: [
 					'surplus-loader',
-					'dottedidentifierremover', 
 					'awesome-typescript-loader'
 				]
 			}
