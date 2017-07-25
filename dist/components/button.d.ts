@@ -1,5 +1,5 @@
 import { DataSignal } from "s-js";
-import { MouseEventType } from 'surplus-mixin-onmouse';
+import { MouseEventObject } from 'surplus-mixin-onmouse';
 export declare type MdcIntentitonType = "primary" | "accent";
 export interface MdcButtonProps {
     flat?: DataSignal<boolean>;
@@ -7,9 +7,6 @@ export interface MdcButtonProps {
     dense?: DataSignal<boolean>;
     intention?: DataSignal<MdcIntentitonType>;
     disabled?: DataSignal<boolean>;
-    mouseEvent?: {
-        name: MouseEventType;
-        listener: (evt: MouseEvent) => void;
-    };
+    mouseEvents?: MouseEventObject | MouseEventObject[];
 }
 export declare const MdcButton: (props: MdcButtonProps) => JSX.Element;

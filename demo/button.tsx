@@ -12,10 +12,10 @@ const button1: MdcButtonProps = {
 export = (ctrl: any) =>
     <div>
         <section className="hero">
-            <MdcButton mouseEvent={{
+            <MdcButton mouseEvents={{
                 name: "click", listener: () => {
                     alert("click")
-                }
+                } 
             }}>Flat</MdcButton>
             <MdcButton raised={() => true} intention={() => "primary"} >Raised Primary</MdcButton>
             <MdcButton {...button1} >Raised Accent</MdcButton>
