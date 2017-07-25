@@ -5,7 +5,9 @@ Material design components for surplus
 ```bash
 git clone https://github.com/ismail-codar/surplus-material.git
 cd surplus-material
+npm install
 npm run start
+
 ```
 
 ## Status
