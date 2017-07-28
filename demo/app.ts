@@ -15,7 +15,8 @@ const app = new RoutedApp(
         path: "demo",
         render: require("./default"),
         childs: [
-            { path: "button", render: require("./button") }
+            { path: "button", render: require("./button") },
+            { path: "card", render: require("./card") }
         ]
     }
 )
