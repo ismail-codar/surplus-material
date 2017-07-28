@@ -4,7 +4,7 @@ import S from "s-js";
 import { DataSignal } from "s-js";
 import { MdcBaseProps } from "./base";
 import onmouse from "surplus-mixins/mouse";
-import style from "surplus-mixins/style";
+import styles from "surplus-mixins/style";
 import classes from "surplus-mixins/class";
 
 export type MdcIntentitonType = "primary" | "accent"
@@ -23,7 +23,7 @@ export const MdcButton = (props: MdcButtonProps) => {
     const rippleEffect = !props.rippleEffect || props.rippleEffect()
     const btn =
         <button
-            {...style(props.styles, { display: props.hidden && props.hidden() ? "none" : "" }) }
+            {...styles(props.styles, { display: props.hidden && props.hidden() ? "none" : "" }) }
             {...classes({
                 "mdc-button": true,
                 "button": true,
