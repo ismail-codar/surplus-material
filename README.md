@@ -15,4 +15,28 @@ npm run start
 Current code is only running [surplus](https://github.com/adamhaile/surplus/tree/master) master branch. Please replace https://github.com/adamhaile/surplus/tree/master/packages folder contents to node_modules folder.
 
 ## Status
-It's just at the start and only the button and card component is implemented.
+Currently implemented components:
+* button (+)
+* card (+)
+* checkbox (+)
+* dialog (+)
+* drawer (-)
+* elevation (-)
+* fab (-)
+* grid-list (-)
+* icon-toggle (-)
+* layout-grid (-)
+* linear-progress (-)
+* list (-)
+* radio (-)
+* ripple (-)
+* select (-)
+* simple-menu (-)
+* slider (-)
+* snackbar (-)
+* switch (-)
+* tabs (-)
+* textfield (-)
+* theme (-)
+* toolbar (-)
+* typography (-)

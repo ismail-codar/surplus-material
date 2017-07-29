@@ -2,13 +2,37 @@ import * as Surplus from 'surplus';
 Surplus;
 import S from "s-js";
 import { DataSignal } from "s-js";
-import { MdcBaseProps } from "./base";
+import { MdcBaseProps, sDataValue } from "./base";
 import onmouse from "surplus-mixins/mouse";
 import styles from "surplus-mixins/style";
 import classes from "surplus-mixins/class";
 
-export interface MdcNotImplementedProps extends MdcBaseProps {
-}
+//TODO surlus svg support: https://github.com/Matt-Esch/virtual-dom/blob/master/virtual-hyperscript/hooks/attribute-hook.js
 
-export const MdcNotImplemented = (props: MdcNotImplementedProps) =>
-    <div>NotImplemented component</div>
+export interface MdcCheckboxProps extends MdcBaseProps {
+    dark?: DataSignal<boolean> | boolean
+    cssOnly?: DataSignal<boolean> | boolean
+}
+//global.mdc.checkbox.MDCCheckbox
+export const MdcCheckbox = (props: MdcCheckboxProps) => {
+    const dom =
+        <div
+            {...styles(props.styles) }
+            {...classes({
+                "mdc-checkbox": true,
+                "mdc-checkbox--disabled": sDataValue(props.disabled),
+                "mdc-checkbox--theme-dark": sDataValue(props.dark)
+            }, props.classes)
+            }>
+            <input type="checkbox" id="hero-checkbox" className="mdc-checkbox__native-control" />
+            <div className="mdc-checkbox__background">
+                <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                    <path className="mdc-checkbox__checkmark__path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                </svg>
+                <div className="mdc-checkbox__mixedmark"></div>
+            </div>
+        </div>,
+        checkbox = sDataValue(props.cssOnly) == false ? new window["mdc"].checkbox.MDCCheckbox(dom) : null
+    S.cleanup(() => checkbox && checkbox.destroy());
+    return dom
+}

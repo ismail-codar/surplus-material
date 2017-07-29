@@ -13,8 +13,8 @@ export = (ctrl: any) => {
             <MdcCard classes={{ "demo-card": true }}>
                 <MdcCard_Media classes={{ "demo-card__16-9-media": true }} />
                 <MdcCard_Primary>
-                    <MdcCard_Title text={() => "Title goes here"} />
-                    <MdcCard_SubTitle text={() => "Subtitle here"} />
+                    <MdcCard_Title text="Title goes here" />
+                    <MdcCard_SubTitle text="Subtitle here" />
                 </MdcCard_Primary>
                 <MdcCard_Actions>
                     <MdcButton>Action 1</MdcButton>
@@ -23,21 +23,21 @@ export = (ctrl: any) => {
             </MdcCard>
         </section>
         <section className="demo-typography--section mdc-typography" id="demo-wrapper">
-            <MdcCard dark={() => true} classes={{ "demo-card": true, "demo-card--bg-demo": true }}>
+            <MdcCard dark={true} classes={{ "demo-card": true, "demo-card--bg-demo": true }}>
                 <MdcCard_Primary>
-                    <MdcCard_Title text={() => "Title goes here"} />
-                    <MdcCard_SubTitle text={() => "Subtitle here"} />
+                    <MdcCard_Title text="Title goes here" />
+                    <MdcCard_SubTitle text="Subtitle here" />
                 </MdcCard_Primary>
                 <MdcCard_Actions>
-                    <MdcButton dark={() => true} rippleEffect={() => false}>Action 1</MdcButton>
-                    <MdcButton dark={() => true} rippleEffect={() => false}>Action 2</MdcButton>
+                    <MdcButton dark={true} rippleEffect={false}>Action 1</MdcButton>
+                    <MdcButton dark={true} rippleEffect={false}>Action 2</MdcButton>
                 </MdcCard_Actions>
             </MdcCard>
             <div>
                 <MdcCard classes={{ "demo-card": true }}>
                     <MdcCard_HorizontalBlock>
-                        <MdcCard_MediaItem size={() => "3x"} src={()=>"images/1-1.jpg"}/>
-                        <MdcCard_Actions vertical={()=>true}>
+                        <MdcCard_MediaItem size="3x" src="images/1-1.jpg" />
+                        <MdcCard_Actions vertical={true}>
                             <MdcButton>A 1</MdcButton>
                             <MdcButton>A 2</MdcButton>
                         </MdcCard_Actions>
