@@ -70,17 +70,3 @@ export const MdcDialog = (props: MdcDialogProps) => {
     });
     return dom
 }
-
-export interface MdcDialogBodyProps extends MdcBaseProps {
-    scrollable?: DataSignal<boolean> | boolean
-}
-
-export const MdcDialog_Body = (props: MdcDialogBodyProps) =>
-    <section
-        {...styles(props.styles) }
-        {...classes({
-            "mdc-dialog__body": true,
-            "mdc-dialog__body--scrollable": sDataValue(props.scrollable)
-        }, props.classes) }>
-        {props.children}
-    </section>

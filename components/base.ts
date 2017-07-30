@@ -2,13 +2,14 @@ import { DataSignal } from "s-js";
 import { SStyleType } from "surplus-mixins/style";
 import { SMouseEventType } from "surplus-mixins/mouse";
 import { SClassType } from "surplus-mixins/class";
+import { SAttributeType } from "surplus-mixins/attribute";
 
 export interface MdcBaseProps {
     children?: HTMLElement[] | string[] | string
-    disabled?: DataSignal<boolean> | boolean
-    mouseEvents?: SMouseEventType
+    attrs?: SAttributeType
     classes?: SClassType
     styles?: SStyleType
+    mouseEvents?: SMouseEventType
 }
 
 export const sDataValue = <T>(val: DataSignal<T> | T): boolean => {

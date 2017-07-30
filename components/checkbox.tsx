@@ -3,9 +3,7 @@ Surplus;
 import S from "s-js";
 import { DataSignal } from "s-js";
 import { MdcBaseProps, sDataValue } from "./base";
-import onmouse from "surplus-mixins/mouse";
-import styles from "surplus-mixins/style";
-import classes from "surplus-mixins/class";
+import mixins from "surplus-mixins/all";
 
 //TODO surlus svg support: https://github.com/Matt-Esch/virtual-dom/blob/master/virtual-hyperscript/hooks/attribute-hook.js
 
@@ -17,13 +15,18 @@ export interface MdcCheckboxProps extends MdcBaseProps {
 export const MdcCheckbox = (props: MdcCheckboxProps) => {
     const dom =
         <div
-            {...styles(props.styles) }
-            {...classes({
-                "mdc-checkbox": true,
-                "mdc-checkbox--disabled": sDataValue(props.disabled),
-                "mdc-checkbox--theme-dark": sDataValue(props.dark)
-            }, props.classes)
-            }>
+            {...mixins({
+                attrs: props.attrs,
+                styles: props.styles,
+                onmouse: props.mouseEvents,
+                classes: [
+                    {
+                        "mdc-checkbox": true,
+                        "mdc-checkbox--disabled": props.attrs && sDataValue(props.attrs["disabled"]),
+                        "mdc-checkbox--theme-dark": sDataValue(props.dark)
+                    }, props.classes
+                ]
+            }) }>
             <input type="checkbox" id="hero-checkbox" className="mdc-checkbox__native-control" />
             <div className="mdc-checkbox__background">
                 <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">

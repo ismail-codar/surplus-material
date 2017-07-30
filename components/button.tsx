@@ -3,9 +3,7 @@ Surplus;
 import S from "s-js";
 import { DataSignal } from "s-js";
 import { MdcBaseProps, sDataValue } from "./base";
-import onmouse from "surplus-mixins/mouse";
-import styles from "surplus-mixins/style";
-import classes from "surplus-mixins/class";
+import mixins from "surplus-mixins/all";
 
 export type MdcIntentitonType = "primary" | "accent"
 
@@ -20,22 +18,26 @@ export interface MdcButtonProps extends MdcBaseProps {
 }
 
 export const MdcButton = (props: MdcButtonProps) => {
-    const rippleEffect = !props.rippleEffect || sDataValue(props.rippleEffect)
+    const rippleEffect = props.rippleEffect == undefined || sDataValue(props.rippleEffect)
     const dom =
         <button
-            {...styles(props.styles) }
-            {...classes({
-                "mdc-button": true,
-                "button": true,
-                "mdc-button--theme-dark": sDataValue(props.dark),
-                "mdc-button--raised": sDataValue(props.raised),
-                "mdc-button--compact": sDataValue(props.compact),
-                "mdc-button--dense": sDataValue(props.dense),
-                ["mdc-button--" + sDataValue(props.intention)]: true
-            }, props.classes) }
-            {...onmouse(props.mouseEvents) }
-            disabled={sDataValue(props.disabled)}>
-            {props["children"]}
+            {...mixins({
+                attrs: props.attrs,
+                styles: props.styles,
+                onmouse: props.mouseEvents,
+                classes: [
+                    {
+                        "mdc-button": true,
+                        "button": true,
+                        "mdc-button--theme-dark": sDataValue(props.dark),
+                        "mdc-button--raised": sDataValue(props.raised),
+                        "mdc-button--compact": sDataValue(props.compact),
+                        "mdc-button--dense": sDataValue(props.dense),
+                        ["mdc-button--" + sDataValue(props.intention)]: true
+                    }, props.classes
+                ]
+            }) }>
+            {props.children}
         </button>,
         ripple = rippleEffect ? window["mdc"].ripple.MDCRipple.attachTo(dom) : null;
 
