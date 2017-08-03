@@ -514,3 +514,25 @@ fieldset legend {
     .hero .demo-cell {
       height: 60px;
     }
+
+/*linear-progress*/
+fieldset {
+  margin: 24px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  border: solid 1px;
+}
+fieldset .mdc-linear-progress {
+  margin: 16px 0;
+}
+
+fieldset legend {
+  display: block;
+  padding: 16px;
+  padding-top: 64px;
+  padding-bottom: 24px;
+}
+
+.linear-progress-demo {
+  margin: 64px;
+}

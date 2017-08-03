@@ -26,7 +26,7 @@ Currently implemented components:
 * grid-list (+)
 * icon-toggle (+)
 * layout-grid (+)
-* linear-progress (-)
+* linear-progress (+)
 * list (+)
 * radio (-)
 * ripple (-)
