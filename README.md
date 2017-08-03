@@ -24,7 +24,7 @@ Currently implemented components:
 * elevation (+)
 * fab (+)
 * grid-list (+)
-* icon-toggle (-)
+* icon-toggle (+)
 * layout-grid (-)
 * linear-progress (-)
 * list (+)
