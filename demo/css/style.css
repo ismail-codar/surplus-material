@@ -162,11 +162,6 @@ fieldset legend {
         margin-left: 72px;
       }
 
-      #demo-wrapper {
-        margin: 24px;
-        display: block;
-      }
-
       #demo-wrapper section {
         padding: 24px;
       }
@@ -199,3 +194,157 @@ fieldset legend {
           0px 4px 5px 0px rgba(0, 0, 0, 0.14),
           0px 1px 10px 0px rgba(0, 0, 0, 0.12);
       }
+
+
+
+
+/* toolbar */
+      .demo-container {
+        height: 500px;
+        margin: 0px;
+        font-size: 16px;
+        overflow: scroll;
+      }
+
+      .demo-header-toolbar {
+        z-index: 10;
+      }
+
+      .hero .catalog-toolbar-container {
+        width: 480px;
+        height: 72px;
+      }
+
+      .hero .catalog-toolbar-container .mdc-toolbar {
+        box-shadow:
+          0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+          0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+          0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+      }
+
+      .examples {
+        display: block;
+      }
+
+      .example iframe {
+        border: 1px solid #eee;
+      }
+
+      .examples h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+
+      div.intro {
+        padding: 48px 24px;
+      }
+
+/* elevation */
+    .demo-surfaces {
+        padding-top: 48px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .demo-surface {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 200px;
+        height: 100px;
+        margin: 0 60px 80px;
+
+        border-radius: 3px;
+        font-size: .8em;
+        color: #9E9E9E;
+        background: white;
+      }
+
+      #hover-el {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        border-radius: 4px;
+      }
+
+      .hero .demo-surface {
+        width: 96px;
+        height: 48px;
+        margin: 24px 24px;
+        background-color: #212121;
+        color: #f0f0f0;
+      }
+
+
+/*fab*/
+   /* Make the demo look a little bit better */
+      fieldset {
+        margin-bottom: 0.5rem;
+      }
+
+      fieldset .mdc-fab {
+        margin: 16px;
+      }
+
+      #demo-absolute-fab {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1;
+      }
+
+      @media(min-width: 1024px) {
+        #demo-absolute-fab {
+          bottom: 1.5rem;
+          right: 1.5rem;
+        }
+      }
+
+      fieldset legend {
+        display: block;
+        padding: 16px;
+        padding-top: 64px;
+        padding-bottom: 24px;
+      }
+
+      .hero button {
+        margin-left: 32px;
+        margin-right: 32px;
+
+      }
+
+
+/*grid-list*/
+.demo-grid-tile-content {
+  background-image: url("/demo/images/16-9.jpg");
+}
+/* Hack for webpack async loading: Hide grid list until styles have loaded */
+.mdc-grid-list-demo {
+  visibility: hidden;
+}
+
+.example {
+  padding: 24px;
+}
+
+.example h2 {
+  font-size: 1.3em;
+  margin-bottom: 0.8em;
+  margin-top: 0.8em;
+}
+
+.hero .mdc-grid-list {
+  max-width: 320px;
+  background-color: white;
+}
+
+.hero .mdc-grid-tile__primary {
+  background-color: #212121;
+}
+
+.hero .mdc-grid-tile {
+  width: 76px;
+}

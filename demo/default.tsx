@@ -198,7 +198,7 @@ export = (ctrl: any) =>
 
             <li className="mdc-list-item">
                 <span className="catalog-list-icon mdc-list-item__start-detail"><img className="catalog-component-icon" src="/demo/images/ic_toolbar_24px.svg" /></span>
-                <a href="toolbar/index" className="mdc-list-item__text">
+                <a href="toolbar" className="mdc-list-item__text">
                     Toolbar
                 <span className="mdc-list-item__text__secondary">Header and footers</span>
                 </a>

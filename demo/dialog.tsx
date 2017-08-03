@@ -5,6 +5,7 @@ import { DataSignal } from "s-js";
 import { MdcDialog } from "../components/dialog";
 import { MdcButton } from "../components/button";
 import onmouse from "surplus-mixins/mouse";
+import { MdcList, MdcList_Item } from "../components/list";
 
 const scrolllableDialogOpen = S.data(false)
 
@@ -22,19 +23,18 @@ export = (ctrl: any) => {
             },
             { children: "Button 2" }
         ]} headerText="Choose a Ringtone" scrollable={true} >
-            <ul className="mdc-list">
-                <li className="mdc-list-item">None</li>
-                <li className="mdc-list-item">Callisto</li>
-                <li className="mdc-list-item">Ganymede</li>
-                <li className="mdc-list-item">Luna</li>
-                <li className="mdc-list-item">Marimba</li>
-                <li className="mdc-list-item">Schwifty</li>
-                <li className="mdc-list-item">Callisto</li>
-                <li className="mdc-list-item">Ganymede</li>
-                <li className="mdc-list-item">Luna</li>
-                <li className="mdc-list-item">Marimba</li>
-                <li className="mdc-list-item">Schwifty</li>
-            </ul>
+            <MdcList>
+                <MdcList_Item>None</MdcList_Item>
+                <MdcList_Item>Callisto</MdcList_Item>
+                <MdcList_Item>Ganymede</MdcList_Item>
+                <MdcList_Item>Luna</MdcList_Item>
+                <MdcList_Item>Marimba</MdcList_Item>
+                <MdcList_Item>Schwifty</MdcList_Item>
+                <MdcList_Item>Callisto</MdcList_Item>
+                <MdcList_Item>Ganymede</MdcList_Item>
+                <MdcList_Item>Marimba</MdcList_Item>
+                <MdcList_Item>Schwifty</MdcList_Item>
+            </MdcList>
         </MdcDialog>
         <section className="example">
             <MdcButton {...onmouse({

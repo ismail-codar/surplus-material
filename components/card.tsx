@@ -27,7 +27,7 @@ export interface MdcMediaItemProps extends MdcBaseProps {
 
 
 export const MdcCard = (props: MdcCardProps) =>
-    <div {...styles(props.styles) } {...classes({ "mdc-card": true, "mdc-card--theme-dark": props.dark }, props.classes) }>
+    <div {...styles(props.styles) } {...classes({ "mdc-card": true, "mdc-card--theme-dark": sDataValue(props.dark) }, props.classes) }>
         {props["children"]}
     </div>
 
