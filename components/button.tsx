@@ -33,7 +33,7 @@ export const MdcButton = (props: MdcButtonProps) => {
                         "mdc-button--raised": sDataValue(props.raised),
                         "mdc-button--compact": sDataValue(props.compact),
                         "mdc-button--dense": sDataValue(props.dense),
-                        ["mdc-button--" + sDataValue(props.intention)]: true
+                        ["mdc-button--" + sDataValue(props.intention)]: props.intention !== null
                     }, props.classes
                 ]
             }) }>

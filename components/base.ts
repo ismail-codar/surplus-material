@@ -6,6 +6,8 @@ import { SAttributeType } from "surplus-mixins/attribute";
 import mixins, { ISurplusMixins } from "surplus-mixins/all";
 var extend = require('extend');
 
+export type DeviceSizeType = "" | "phone" | "tablet" | "desktop"
+
 export interface MdcBaseProps {
     children?: HTMLElement[] | string[] | string
     attrs?: SAttributeType

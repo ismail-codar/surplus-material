@@ -33,8 +33,8 @@ export const MdcGridList = (props: MdcGridListProps) => {
                 "mdc-grid-list--tile-gutter-1": sDataValue(props.gutter1),
                 "mdc-grid-list--header-caption": sDataValue(props.headerCaption),
                 "mdc-grid-list--twoline-caption": sDataValue(props.twoLineCaption),
-                ["mdc-grid-list--with-icon-align-" + sDataValue(props.align)]: true,
-                ["mdc-grid-list--tile-aspect-" + sDataValue(props.aspect)]: true
+                ["mdc-grid-list--with-icon-align-" + sDataValue(props.align)]: props.align !== null,
+                ["mdc-grid-list--tile-aspect-" + sDataValue(props.aspect)]: props.aspect !== null
             }, props.classes
         ]
     }) } >

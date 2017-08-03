@@ -25,7 +25,7 @@ Currently implemented components:
 * fab (+)
 * grid-list (+)
 * icon-toggle (+)
-* layout-grid (-)
+* layout-grid (+)
 * linear-progress (-)
 * list (+)
 * radio (-)

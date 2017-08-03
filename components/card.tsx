@@ -46,7 +46,7 @@ export const MdcCard_Media = (props: MdcBaseProps) =>
         {props.children}
     </section>
 export const MdcCard_MediaItem = (props: MdcMediaItemProps) =>
-    <img src={sDataValue(props.src) + ""} {...styles(props.styles) } {...classes({ "mdc-card__media-item": true, ["mdc-card__media-item--" + sDataValue(props.size as any)]: true }, props.classes) } />
+    <img src={sDataValue(props.src) + ""} {...styles(props.styles) } {...classes({ "mdc-card__media-item": true, ["mdc-card__media-item--" + sDataValue(props.size as any)]: props.size !== null }, props.classes) } />
 
 export const MdcCard_Primary = (props: MdcBaseProps) =>
     <section {...styles(props.styles) } {...classes({ "mdc-card__primary": true }, props.classes) }>
