@@ -3,7 +3,7 @@ Surplus;
 import { S } from "surplus";
 import { DataSignal } from "s-js";
 import classes from "surplus-mixins/class";
-import { elevation } from "../components/base";
+import { elevationClass } from "../components/_utils";
 
 
 export = (ctrl: any) => {
@@ -13,13 +13,13 @@ export = (ctrl: any) => {
     return <div><section className="hero">
         <figure {...classes({
             "demo-surface": true,
-            [elevation(0)]: true
+            [elevationClass(0)]: true
         }) }>
             <figcaption>FLAT 0dp</figcaption>
         </figure>
         <figure {...classes({
             "demo-surface": true,
-            [elevation(1)]: true
+            [elevationClass(1)]: true
         }) }>
             <figcaption>FLAT 1dp</figcaption>
         </figure>
@@ -27,7 +27,7 @@ export = (ctrl: any) => {
         <section className="demo-surfaces">
             {
                 Array.from(Array(25).keys()).map(i =>
-                    <figure {...classes({ "demo-surface": true, [elevation(i as any)]: true }) }>
+                    <figure {...classes({ "demo-surface": true, [elevationClass(i as any)]: true }) }>
                         <figcaption>0dp (<code>mdc-elevation--z{i}</code>)</figcaption>
                     </figure>)
             }

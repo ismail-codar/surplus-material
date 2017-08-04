@@ -2,11 +2,11 @@ import * as Surplus from 'surplus';
 Surplus;
 import S from "s-js";
 import { DataSignal } from "s-js";
-import { MdcBaseProps, sDataValue, DeviceSizeType } from "./base";
 import onmouse from "surplus-mixins/mouse";
 import styles from "surplus-mixins/style";
 import classes from "surplus-mixins/class";
 import mixins from "surplus-mixins/all";
+import { DeviceSizeType, MdcBaseProps, sDataValue } from "./_base";
 
 export type ValueByDeviceSizeType = {[k in DeviceSizeType]?: DataSignal<number> | number}
 export interface MdcLayoutGridProps extends MdcBaseProps {

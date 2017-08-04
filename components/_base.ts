@@ -4,6 +4,7 @@ import { SMouseEventType } from "surplus-mixins/mouse";
 import { SClassType } from "surplus-mixins/class";
 import { SAttributeType } from "surplus-mixins/attribute";
 import mixins, { ISurplusMixins } from "surplus-mixins/all";
+import { MdcIntentitonType } from "./button";
 var extend = require('extend');
 
 export type DeviceSizeType = "" | "phone" | "tablet" | "desktop"
@@ -30,8 +31,3 @@ export const propsMixins = (props: MdcBaseProps, extra: ISurplusMixins) => {
     extend(target, extra)
     return mixins(target)
 }
-
-
-export type ElevationType = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24
-export const elevation = (elevation: DataSignal<ElevationType> | ElevationType) =>
-    "mdc-elevation--z" + sDataValue(elevation)

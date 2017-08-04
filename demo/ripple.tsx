@@ -2,10 +2,11 @@ import * as Surplus from 'surplus';
 Surplus;
 import { S } from "surplus";
 import { DataSignal } from "s-js";
-import { MdcNotImplemented } from "../components/ripple";
+import { rippleSurfaceElement } from "../components/_utils";
 
 export = (ctrl: any) => {
-    return <section className="hero">
-        <MdcNotImplemented></MdcNotImplemented>
-    </section>
+    return rippleSurfaceElement(
+        <section className="hero">
+        </section>
+    )
 }

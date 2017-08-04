@@ -2,10 +2,10 @@ import * as Surplus from 'surplus';
 Surplus;
 import S from "s-js";
 import { DataSignal } from "s-js";
-import { MdcBaseProps, sDataValue } from "./base";
+import { MdcBaseProps, sDataValue } from "./_base";
 import mixins from "surplus-mixins/all";
 
-export type MdcIntentitonType = "primary" | "accent"
+export type MdcIntentitonType = "" | "primary" | "accent"
 
 export interface MdcButtonProps extends MdcBaseProps {
     rippleEffect?: DataSignal<boolean> | boolean

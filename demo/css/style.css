@@ -369,13 +369,6 @@ fieldset legend {
         margin-left: 1rem;
       }
 
-      .example {
-        display: flex;
-        flex-flow: row wrap;
-        align-content: left;
-        justify-content: left;
-      }
-
       .toggle-example {
         min-width: 240px;
         padding: 24px;
@@ -535,4 +528,13 @@ fieldset legend {
 
 .linear-progress-demo {
   margin: 64px;
+}
+
+/* Hack to work around style-loader asynchronously loading styles. */
+/* Equivalent to using mdc-typography's subheading2, which is used in the sass file. */
+.mdc-select {
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .04em;
 }
