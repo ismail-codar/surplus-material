@@ -33,23 +33,3 @@ export const selectElement = (element: HTMLElement): HTMLSelectElement => {
     });
     return element as HTMLSelectElement
 }
-
-/**
-<select multiple="" size="8" class="mdc-multi-select mdc-list">
-
-    <optgroup class="mdc-list-group" label="Fats, Oils, &amp; Sweets">
-        <option class="mdc-list-item">Olive Oil</option>
-        <option class="mdc-list-item">Brown Sugar</option>
-        <option class="mdc-list-item">Ice Cream</option>
-    </optgroup>
-    <option class="mdc-list-divider" role="presentation" disabled="">
-
-    </option>
-    <optgroup class="mdc-list-group" label="Dairy">
-        <option class="mdc-list-item">Milk</option>
-        <option class="mdc-list-item">Cheese</option>
-        <option class="mdc-list-item">More Cheese</option>
-    </optgroup>
-
-</select>
- */
