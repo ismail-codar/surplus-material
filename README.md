@@ -40,3 +40,10 @@ Currently implemented components:
 * theme (+
 * toolbar (+)
 * typography (+)
+
+## Links
+##### DataTable
+* https://github.com/material-components/material-components-web/blob/master/docs/migrating-from-mdl.md
+* http://iamisti.github.io/mdDataTable/
+* https://github.com/daniel-nagy/md-data-table#demo
+* https://roxus.github.io/paper-datatable-api/components/paper-datatable-api/#paper-datatable-api

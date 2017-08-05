@@ -7,6 +7,9 @@ import { mdcTypography } from "../components/_css-dom-utils";
 
 export = (ctrl: any) => {
     return <section className="hero">
-        <h1 {...classes(mdcTypography("display4", true)) }>Display 4</h1>
+        <h1 {...classes({
+            [mdcTypography("display4")]: true,
+            [mdcTypography("adjust-margin")]: true
+        }) }>Display 4</h1>
     </section>
 }

@@ -44,14 +44,11 @@ export const mdcThemeTextColorOnBackground = (textType: MdcTextType, background?
 //other css utils
 export const mdcElevationClass = (elevation: DataSignal<ElevationType> | ElevationType) =>
     "mdc-elevation--z" + sDataValue(elevation)
-export const mdcTypography = (typography: "display4" | "display3" | "display2" | "display1" |
+
+
+//TODO https://github.com/material-components/material-components-web/tree/master/packages/mdc-typography
+export const mdcTypography = (typography?: "display4" | "display3" | "display2" | "display1" |
     "subheading2" | "subheading1" |
     "body2" | "body1" |
-    "headline" | "title" | "caption", adjustMargin: boolean) => {
-    const obj = {
-        ["mdc-typography--" + typography]: true
-    }
-    if (adjustMargin)
-        obj["mdc-typography--adjust-margin"] = true
-    return obj
-}
+    "headline" | "title" | "caption" | "button" | "adjust-margin") =>
+    "mdc-typography" + (typography ? "--" + typography : "")
