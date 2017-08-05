@@ -2,12 +2,11 @@ import * as Surplus from 'surplus';
 Surplus;
 import S from "s-js";
 import { DataSignal } from "s-js";
-import { MdcBaseProps, sDataValue } from "./_base";
+import { MdcBaseProps, sDataValue, MdcIntentitonType } from "./_base";
 import onmouse from "surplus-mixins/mouse";
 import styles from "surplus-mixins/style";
 import classes from "surplus-mixins/class";
 import mixins from "surplus-mixins/all";
-import { MdcIntentitonType } from "./button";
 
 export type OnOffType = "on" | "off"
 

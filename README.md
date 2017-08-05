@@ -36,7 +36,7 @@ Currently implemented components:
 * snackbar (+)
 * switch (+)
 * tabs (+)
-* textfield (-)
-* theme (-)
+* textfield (+)
+* theme (+
 * toolbar (+)
-* typography (-)
+* typography (+)

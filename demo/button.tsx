@@ -1,8 +1,9 @@
 import * as Surplus from 'surplus';
 Surplus;
-import { MdcButton, MdcButtonProps, MdcIntentitonType } from "../components/button";
+import { MdcButton, MdcButtonProps } from "../components/button";
 import S from "s-js"
 import { DataSignal } from "s-js";
+import { MdcIntentitonType } from "../components/_base";
 
 const button1: MdcButtonProps = {
     raised: () => true,

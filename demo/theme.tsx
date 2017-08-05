@@ -2,10 +2,17 @@ import * as Surplus from 'surplus';
 Surplus;
 import { S } from "surplus";
 import { DataSignal } from "s-js";
-import { MdcNotImplemented } from "../components/theme";
+import { MdcButton } from "../components/button";
+import { mdcThemeBackgroundColor, mdcThemeTextColorOnBackground } from "../components/_css-dom-utils";
+import classes from "surplus-mixins/class";
 
+// mdc-theme--primary-bg mdc-theme--text-primary-on-primary
+// mdc-theme--primary-bg mdc-theme--text-primary-on-background
 export = (ctrl: any) => {
     return <section className="hero">
-        <MdcNotImplemented></MdcNotImplemented>
+        <button {...classes({
+            [mdcThemeBackgroundColor("primary")]: true,
+            [mdcThemeTextColorOnBackground("primary", "primary")]: true
+        }) }>Primary</button>
     </section>
 }

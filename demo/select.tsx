@@ -3,7 +3,7 @@ Surplus;
 import { S } from "surplus";
 import { DataSignal } from "s-js";
 import { MdcSelect, MdcSelect_Item } from "../components/select";
-import { selectElement } from "../components/_utils";
+import { mdcSelectElement } from "../components/_css-dom-utils";
 
 export = (ctrl: any) => {
     return <div>
@@ -32,7 +32,7 @@ export = (ctrl: any) => {
         <section className="example">
             <h2>Select Multiple - CSS Only</h2>
             {
-                selectElement(<select multiple size={8}>
+                mdcSelectElement(<select multiple size={8}>
                 <optgroup label="Fats, Oils, &amp; Sweets">
                     <option>Olive Oil</option>
                     <option>Brown Sugar</option>

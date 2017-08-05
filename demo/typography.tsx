@@ -2,10 +2,11 @@ import * as Surplus from 'surplus';
 Surplus;
 import { S } from "surplus";
 import { DataSignal } from "s-js";
-import { MdcNotImplemented } from "../components/typography";
+import classes from "surplus-mixins/class";
+import { mdcTypography } from "../components/_css-dom-utils";
 
 export = (ctrl: any) => {
     return <section className="hero">
-        <MdcNotImplemented></MdcNotImplemented>
+        <h1 {...classes(mdcTypography("display4", true)) }>Display 4</h1>
     </section>
 }
