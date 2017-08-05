@@ -2,7 +2,7 @@ import * as Surplus from 'surplus';
 Surplus;
 import S from "s-js";
 import { DataSignal } from "s-js";
-import { MdcBaseProps, sDataValue } from "./_base";
+import { MdcBaseProps, sDataValue, randomId } from "./_base";
 import onmouse from "surplus-mixins/mouse";
 import styles from "surplus-mixins/style";
 import classes from "surplus-mixins/class";
@@ -16,7 +16,7 @@ export interface MdcRadioProps extends MdcBaseProps {
 }
 
 export const MdcRadio = (props: MdcRadioProps) => {
-    const id = Math.random().toString(36).substr(2, 10),
+    const id = randomId(),
         cssOnly = props.cssOnly != undefined && sDataValue(props.cssOnly),
         dom = <div className="mdc-form-field">
             <div className="mdc-radio">

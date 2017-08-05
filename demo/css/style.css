@@ -693,3 +693,7 @@ demo-tabs__scroller {
   right: auto;
   left: 0;
 }
+
+.hero .mdc-textfield {
+  min-width: 240px;
+}

@@ -31,3 +31,5 @@ export const propsMixins = (props: MdcBaseProps, extra: ISurplusMixins) => {
     extend(target, extra)
     return mixins(target)
 }
+
+export const randomId = () => Math.random().toString(36).substr(2, 10)

@@ -20,15 +20,16 @@ export interface MdcTabItemProps extends MdcBaseProps {
 
 const MdcTab_Scroller = (props: MdcBaseProps) => {
     (props.children[0] as HTMLElement).classList.add("mdc-tab-bar-scroller__scroll-frame__tabs")
-    const dom = <div {...mixins({
-        attrs: props.attrs,
-        styles: props.styles,
-        classes: [
-            {
-                "mdc-tab-bar-scroller": true
-            }, props.classes
-        ]
-    }) } >
+    const dom = <div
+        {...mixins({
+            attrs: props.attrs,
+            styles: props.styles,
+            classes: [
+                {
+                    "mdc-tab-bar-scroller": true
+                }, props.classes
+            ]
+        }) } >
         <div className="mdc-tab-bar-scroller__indicator mdc-tab-bar-scroller__indicator--back">
             <a className="mdc-tab-bar-scroller__indicator__inner material-icons" href="#" aria-label="scroll back button">
                 navigate_before
@@ -44,7 +45,7 @@ const MdcTab_Scroller = (props: MdcBaseProps) => {
         </div>
     </div>,
         scroller = new window["mdc"].tabs.MDCTabBarScroller(dom)
-        dom["$scroller"] = scroller
+    dom["$scroller"] = scroller
     S.cleanup(() => scroller.destroy());
     return dom
 }
