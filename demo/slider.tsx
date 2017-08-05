@@ -2,10 +2,12 @@ import * as Surplus from 'surplus';
 Surplus;
 import { S } from "surplus";
 import { DataSignal } from "s-js";
-import { MdcNotImplemented } from "../components/slider";
+import { MdcSlider } from "../components/slider";
 
 export = (ctrl: any) => {
     return <section className="hero">
-        <MdcNotImplemented></MdcNotImplemented>
+        <div id="hero-slider-wrapper">
+            <MdcSlider />
+        </div>
     </section>
 }
