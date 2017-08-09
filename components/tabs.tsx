@@ -21,7 +21,7 @@ export interface MdcTabItemProps extends MdcBaseProps {
 const MdcTab_Scroller = (props: MdcBaseProps) => {
     (props.children[0] as HTMLElement).classList.add("mdc-tab-bar-scroller__scroll-frame__tabs")
     const dom = <div
-        {...mixins({
+        fn={mixins({
             attrs: props.attrs,
             styles: props.styles,
             classes: [
@@ -52,7 +52,7 @@ const MdcTab_Scroller = (props: MdcBaseProps) => {
 
 export const MdcTabs = (props: MdcTabsProps) => {
     const dom = <nav
-        {...mixins({
+        fn={mixins({
             attrs: props.attrs,
             styles: props.styles,
             classes: [
@@ -77,7 +77,7 @@ export const MdcTabs = (props: MdcTabsProps) => {
 }
 
 export const MdcTab_Item = (props: MdcTabItemProps) =>
-    <a {...mixins({
+    <a fn={mixins({
         attrs: props.attrs,
         styles: props.styles,
         classes: [

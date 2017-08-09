@@ -12,7 +12,7 @@ export = (ctrl: any) => {
         header: <div>Header Test 1</div>,
         open: S.data(false)
     }
-    return <section {...mixins({
+    return <section fn={mixins({
         styles: {
             zIndex: "99",
             marginTop: "-66px",

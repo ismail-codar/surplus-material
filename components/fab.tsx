@@ -20,7 +20,7 @@ export const MdcFab = (props: MdcFabProps) => {
     const rippleEffect = props.rippleEffect == undefined || sDataValue(props.rippleEffect)
 
     const dom =
-        <button {...mixins({
+        <button fn={mixins({
             classes: {
                 "mdc-fab material-icons": true,
                 "mdc-fab--mini": sDataValue(props.mini),

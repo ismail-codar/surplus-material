@@ -13,7 +13,7 @@ export interface MdcSwitchProps extends MdcBaseProps {
 
 export const MdcSwitch = (props: MdcSwitchProps) =>
     <div
-        {...mixins({
+        fn={mixins({
             attrs: props.attrs,
             styles: props.styles,
             onmouse: props.mouseEvents,

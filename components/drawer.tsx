@@ -18,7 +18,7 @@ export interface MdcPermanentDrawerProps extends MdcBaseProps {
 
 export const MdcTemporaryDrawer = (props: MdcDrawerProps) => {
     props.header.classList.add("mdc-temporary-drawer__header-content", "mdc-theme--primary-bg", "mdc-theme--text-primary-on-primary")
-    const dom = <aside {...mixins({
+    const dom = <aside fn={mixins({
         attrs: props.attrs,
         styles: props.styles,
         classes: [
@@ -45,7 +45,7 @@ export const MdcTemporaryDrawer = (props: MdcDrawerProps) => {
 
 
 export const MdcPersistentDrawer = (props: MdcDrawerProps) => {
-    const dom = <aside {...mixins({
+    const dom = <aside fn={mixins({
         attrs: props.attrs,
         styles: props.styles,
         classes: [
@@ -68,7 +68,7 @@ export const MdcPersistentDrawer = (props: MdcDrawerProps) => {
     return dom;
 }
 export const MdcPermanentDrawer = (props: MdcPermanentDrawerProps) =>
-    <nav {...mixins({
+    <nav fn={mixins({
         attrs: props.attrs,
         styles: props.styles,
         classes: [

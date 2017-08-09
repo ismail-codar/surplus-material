@@ -19,25 +19,27 @@ const app = new RoutedApp(
             { path: "card", render: require("./card") },
             { path: "checkbox", render: require("./checkbox") },
             { path: "dialog", render: require("./dialog") },
-            { path: "drawer", abstract:true, childs:[
-                {
-                    path:"temporary-drawer",
-                    render: require("./drawer/temporary-drawer")
-                },
-                {
-                    path:"persistent-drawer",
-                    render: require("./drawer/persistent-drawer")
-                },
-                {
-                    path:"permanent-drawer-below-toolbar",
-                    render: require("./drawer/permanent-drawer-below-toolbar")
-                },
-                {
-                    path:"permanent-drawer-above-toolbar",
-                    render: require("./drawer/permanent-drawer-above-toolbar")
-                }
-            ] },
-            { path: "elevation", render: require("./elevation") }, 
+            {
+                path: "drawer", abstract: true, childs: [
+                    {
+                        path: "temporary-drawer",
+                        render: require("./drawer/temporary-drawer")
+                    },
+                    {
+                        path: "persistent-drawer",
+                        render: require("./drawer/persistent-drawer")
+                    },
+                    {
+                        path: "permanent-drawer-below-toolbar",
+                        render: require("./drawer/permanent-drawer-below-toolbar")
+                    },
+                    {
+                        path: "permanent-drawer-above-toolbar",
+                        render: require("./drawer/permanent-drawer-above-toolbar")
+                    }
+                ]
+            },
+            { path: "elevation", render: require("./elevation") },
             { path: "fab", render: require("./fab") },
             { path: "grid-list", render: require("./grid-list") },
             { path: "icon-toggle", render: require("./icon-toggle") },
@@ -55,7 +57,13 @@ const app = new RoutedApp(
             { path: "textfield", render: require("./textfield") },
             { path: "theme", render: require("./theme") },
             { path: "toolbar", render: require("./toolbar") },
-            { path: "typography", render: require("./typography") }
+            { path: "typography", render: require("./typography") },
+            {
+                path: "other", abstract: true, childs: [
+                    { path: "data-table", render: require("./other/data-table") },
+
+                ]
+            }
         ]
     }
 )

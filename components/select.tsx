@@ -18,7 +18,7 @@ export interface MdcSelectItemProps extends MdcBaseProps {
 
 export const MdcSelect = (props: MdcSelectProps) => {
     const dom = <div
-        {...mixins({
+        fn={mixins({
             attrs: [{ role: "listbox" }, props.attrs],
             styles: props.styles,
             classes: [
@@ -44,7 +44,7 @@ export const MdcSelect = (props: MdcSelectProps) => {
 
 export const MdcSelect_Item = (props: MdcSelectItemProps) =>
     <li
-        {...mixins({
+        fn={mixins({
             attrs: [{ role: "option", "aria-disabled": props.group }, props.attrs],
             styles: props.styles,
             onmouse: props.mouseEvents,

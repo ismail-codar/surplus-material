@@ -15,7 +15,7 @@ export interface MdcSimpleMenuProps extends MdcBaseProps {
 
 export const MdcSimpleMenu = (props: MdcSimpleMenuProps) => {
     const dom = <div
-        {...mixins({
+        fn={mixins({
             attrs: props.attrs,
             styles: props.styles,
             classes: [
@@ -38,7 +38,7 @@ export const MdcSimpleMenu = (props: MdcSimpleMenuProps) => {
 }
 
 export const MdcSimpleMenu_Item = (props: MdcBaseProps) =>
-    <li  {...mixins({
+    <li  fn={mixins({
         attrs: [{ role: "menuitem" }, props.attrs],
         styles: props.styles,
         classes: [
@@ -50,7 +50,7 @@ export const MdcSimpleMenu_Item = (props: MdcBaseProps) =>
     }) }>{props.children}</li>
 
 export const MdcSimpleMenu_Anchor = (props: MdcBaseProps) =>
-    <div {...mixins({
+    <div fn={mixins({
         attrs: props.attrs,
         styles: props.styles,
         classes: [

@@ -19,7 +19,7 @@ export const MdcButton = (props: MdcButtonProps) => {
     const rippleEffect = props.rippleEffect == undefined || sDataValue(props.rippleEffect)
     const dom =
         <button
-            {...mixins({
+            fn={mixins({
                 attrs: props.attrs,
                 styles: props.styles,
                 onmouse: props.mouseEvents,

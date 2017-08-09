@@ -18,7 +18,7 @@ Current code is only running [surplus](https://github.com/adamhaile/surplus/tree
 Currently implemented components:
 * button (+)
 * card (+)
-* checkbox (-)
+* checkbox (+)
 * dialog (+)
 * drawer (+)
 * elevation (+)
@@ -32,7 +32,7 @@ Currently implemented components:
 * ripple (+)
 * select (+)
 * simple-menu (+)
-* slider (-)
+* slider (+)
 * snackbar (+)
 * switch (+)
 * tabs (+)
@@ -47,3 +47,4 @@ Currently implemented components:
 * http://iamisti.github.io/mdDataTable/
 * https://github.com/daniel-nagy/md-data-table#demo
 * https://roxus.github.io/paper-datatable-api/components/paper-datatable-api/#paper-datatable-api
+* https://codepen.io/azamatms/pen/ZGwOMM

@@ -3,7 +3,7 @@ Surplus;
 import { S } from "surplus";
 import { DataSignal } from "s-js";
 import { MdcButton } from "../components/button";
-import { mdcThemeBackgroundColor, mdcThemeTextColorOnBackground } from "../components/_css-dom-utils";
+import { mdcThemeBackgroundColor, mdcThemeTextColorOnBackground } from "../components/_utils";
 import classes from "surplus-mixins/class";
 
 // mdc-theme--primary-bg mdc-theme--text-primary-on-primary

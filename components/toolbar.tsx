@@ -44,13 +44,13 @@ const MdcToolbar_Item = (props: MdcToolbarItemProps) => {
             onmouse: props.mouseEvents
         }) } href={sDataValue(props.href) || "#"} >menu</a>;
     if (props.type === "title")
-        return <span {...mixins({
+        return <span fn={mixins({
             attrs: props.attrs,
             styles: props.styles,
             classes: [{ "mdc-toolbar__title": true }, props.classes]
         }) } >{sDataValue(props.text)}</span>;
     if (props.type === "linkicon")
-        return <a {...mixins({
+        return <a fn={mixins({
             attrs: props.attrs,
             styles: props.styles,
             classes: [
@@ -82,7 +82,7 @@ export const MdcToolbar = (props: MdcToolbarProps) => {
         items = props.items
     } else
         items = [items as any]
-    const dom = <header {...mixins({
+    const dom = <header fn={mixins({
         attrs: props.attrs,
         styles: props.styles,
         classes: [

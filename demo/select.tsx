@@ -3,7 +3,7 @@ Surplus;
 import { S } from "surplus";
 import { DataSignal } from "s-js";
 import { MdcSelect, MdcSelect_Item } from "../components/select";
-import { mdcSelectElement } from "../components/_css-dom-utils";
+import { mdcSelectElement } from "../components/_utils";
 
 export = (ctrl: any) => {
     return <div>

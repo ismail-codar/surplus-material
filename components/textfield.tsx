@@ -32,7 +32,7 @@ export const MdcTextField = (props: MdcTextFieldProps) => {
     const multiline = sDataValue(props.multiline),
         id = randomId(),
         dom = <div
-            {...mixins({
+            fn={mixins({
                 attrs: props.attrs,
                 styles: props.styles,
                 classes: [
@@ -66,7 +66,7 @@ export const MdcTextField = (props: MdcTextFieldProps) => {
 
 export const MdcTextField_Helper = (props: MdcTextFieldHelperProps) => {
     const id = randomId(),
-        dom = <p {...mixins({
+        dom = <p fn={mixins({
             attrs: props.attrs,
             styles: props.styles,
             classes: [

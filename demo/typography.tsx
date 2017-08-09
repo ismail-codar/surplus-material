@@ -3,7 +3,7 @@ Surplus;
 import { S } from "surplus";
 import { DataSignal } from "s-js";
 import classes from "surplus-mixins/class";
-import { mdcTypography } from "../components/_css-dom-utils";
+import { mdcTypography } from "../components/_utils";
 
 export = (ctrl: any) => {
     return <section className="hero">

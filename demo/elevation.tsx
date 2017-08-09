@@ -3,7 +3,7 @@ Surplus;
 import { S } from "surplus";
 import { DataSignal } from "s-js";
 import classes from "surplus-mixins/class";
-import { mdcElevationClass } from "../components/_css-dom-utils";
+import { mdcElevationClass } from "../components/_utils";
 
 
 export = (ctrl: any) => {

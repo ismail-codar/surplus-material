@@ -51,7 +51,7 @@ export = (ctrl: any) => {
             </section>
             <section>
                 <h3>Example - Avatar with Text and icon</h3>
-                <MdcList {...mixins({ attrs: { id: "avatar-text-icon-demo-list" } }) } avatar={true}>
+                <MdcList fn={mixins({ attrs: { id: "avatar-text-icon-demo-list" } }) } avatar={true}>
                     <MdcList_Item
                         startDetail={<img className="grey-bg" src="/demo/images/animal3.svg" width="56" height="56" alt="Brown Bear" />}
                         endDetail={<a className="material-icons" href="#">favorite</a>}

@@ -23,7 +23,7 @@ export interface MdcGridListSecondaryIconProps extends MdcBaseProps {
 }
 
 export const MdcGridList = (props: MdcGridListProps) => {
-    const dom = <div {...mixins({
+    const dom = <div fn={mixins({
         attrs: props.attrs,
         styles: props.styles,
         onmouse: props.mouseEvents,

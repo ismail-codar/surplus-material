@@ -9,9 +9,10 @@ var extend = require('extend');
 export type MdcIntentitonType = "" | "primary" | "accent"
 export type MdcTextType = "primary" | "secondary" | "hint" | "disabled" | "icon"
 export type DeviceSizeType = "" | "phone" | "tablet" | "desktop"
-export type ElevationType = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24
 
 export interface MdcBaseProps {
+    ref?: any;
+    fn?: <U>(node: any, state?: U) => any;
     children?: HTMLElement[] | string[] | string
     attrs?: SAttributeType
     classes?: SClassType

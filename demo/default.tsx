@@ -211,5 +211,14 @@ export = (ctrl: any) =>
                 <span className="mdc-list-item__text__secondary">Type hierarchy</span>
                 </a>
             </li>
+            <hr/>
+
+            <li className="mdc-list-item">
+                <span className="catalog-list-icon mdc-list-item__start-detail"><img className="catalog-component-icon" src="/demo/images/ic_typography_24px.svg" /></span>
+                <a href="other/data-table" className="mdc-list-item__text">
+                    DataTable
+                <span className="mdc-list-item__text__secondary">Data tables</span>
+                </a>
+            </li>
         </ul>
     </nav>

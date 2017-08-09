@@ -19,7 +19,7 @@ export interface MdcLayoutGridCellProps extends MdcBaseProps {
 }
 
 export const MdcLayoutGrid = (props: MdcLayoutGridProps) =>
-    <div {...mixins({
+    <div fn={mixins({
         attrs: props.attrs,
         styles: props.styles,
         classes: [
@@ -48,7 +48,7 @@ export const MdcLayoutGrid_Cell = (props: MdcLayoutGridCellProps) => {
     } else {
         classes["mdc-layout-grid__cell--span-" + props.cellSpan] = true
     }
-    return <div {...mixins({
+    return <div fn={mixins({
         attrs: props.attrs,
         styles: props.styles,
         classes: [classes, props.classes]

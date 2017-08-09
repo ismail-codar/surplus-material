@@ -23,7 +23,7 @@ export interface MdcSnackbarProps extends MdcBaseProps {
 
 export const MdcSnackbar = (props: MdcSnackbarProps) => {
     const dom = <div
-        {...mixins({
+        fn={mixins({
             attrs: [{ "aria-live": "assertive", "aria-atomic": true, "aria-hidden": true }, props.attrs],
             styles: props.styles,
             onmouse: props.mouseEvents,

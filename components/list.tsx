@@ -28,7 +28,7 @@ export const MdcList = (props: MdcListProps) => {
             ripples.push(window["mdc"].ripple.MDCRipple.attachTo(child))
         }
     });
-    const dom = <ul {...mixins({
+    const dom = <ul fn={mixins({
         attrs: props.attrs,
         styles: props.styles,
         classes: [
@@ -70,7 +70,7 @@ export const MdcList_Item = (props: MdcListItemProps) => {
         }
     }
     return <li
-        {...mixins({
+        fn={mixins({
             attrs: props.attrs,
             styles: props.styles,
             onmouse: props.mouseEvents,

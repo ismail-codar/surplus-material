@@ -17,7 +17,7 @@ export = (ctrl: any) => {
                 <MdcFab icon="favorite_border" label="Favorite" mini={true} plain={true} />
             </fieldset>
         </section>
-        <MdcFab {...mixins({
+        <MdcFab fn={mixins({
             attrs:{
                 id:"demo-absolute-fab"
             }
