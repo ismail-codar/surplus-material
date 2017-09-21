@@ -10,7 +10,6 @@ import { DeviceSizeType, MdcBaseProps, sDataValue } from "./_base";
 
 export type ValueByDeviceSizeType = {[k in DeviceSizeType]?: DataSignal<number> | number}
 export interface MdcLayoutGridProps extends MdcBaseProps {
-    useMaxWidth?: DataSignal<boolean> | boolean
     columnWidth?: DataSignal<string> | string
     align?: DataSignal<"left" | "right"> | "left" | "right"
 }
@@ -25,8 +24,7 @@ export const MdcLayoutGrid = (props: MdcLayoutGridProps) =>
         classes: [
             {
                 "mdc-layout-grid": true,
-                ["mdc-layout-grid--align-" + sDataValue(props.align)]: props.align !== null,
-                "max-width": sDataValue(props.useMaxWidth)
+                ["mdc-layout-grid--align-" + sDataValue(props.align)]: props.align != null
             },
             props.classes
         ]

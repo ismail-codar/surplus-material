@@ -38,9 +38,9 @@ export const MdcGridList = (props: MdcGridListProps) => {
                 props.twoLineCaption
               ),
               ['mdc-grid-list--with-icon-align-' + sDataValue(props.align)]:
-                props.align !== null,
+                props.align != null,
               ['mdc-grid-list--tile-aspect-' + sDataValue(props.aspect)]:
-                props.aspect !== null
+                props.aspect != null
             },
             props.classes
           ]
@@ -97,13 +97,6 @@ export const MdcGridList_Item_Primary = (props: MdcBaseProps) => {
   );
 };
 
-/**
- <span class="mdc-grid-tile__secondary">
-    <i class="mdc-grid-tile__icon material-icons">star_border</i>
-    <span class="mdc-grid-tile__title">Single Very Long Grid Title Line</span>
-    <span class="mdc-grid-tile__support-text">Support text</span>
-</span>
- */
 export const MdcGridList_Item_Secondary = (props: MdcBaseProps) => (
   <span
     fn={mixins({

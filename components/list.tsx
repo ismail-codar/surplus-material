@@ -2,7 +2,7 @@ import * as Surplus from 'surplus';
 Surplus;
 import S from 's-js';
 import { DataSignal } from 's-js';
-import { MdcBaseProps, sDataValue } from './_base';
+import { MdcBaseProps, sDataValue, flattenChilds } from './_base';
 import mixins from 'surplus-mixins/all';
 
 export interface MdcListProps extends MdcBaseProps {
@@ -25,7 +25,9 @@ export const MdcList = (props: MdcListProps) => {
     props.rippleEffect == undefined || sDataValue(props.rippleEffect);
   //TODO surplus bug: <MdcList>{props.displayedVertexes().map(vertex =>... de childs: [[.. durumu..]]
   // const childs = (props.children[0] as any) as HTMLElement[];
-  const childs = props.children as HTMLElement[];
+  const childs = flattenChilds(props.children).filter(
+    item => item != null
+  ) as HTMLElement[];
   childs.forEach(child => {
     if (rippleEffect) {
       ripples.push(window['mdc'].ripple.MDCRipple.attachTo(child));
@@ -36,6 +38,7 @@ export const MdcList = (props: MdcListProps) => {
       fn={mixins({
         attrs: props.attrs,
         styles: props.styles,
+        onmouse: props.mouseEvents,
         classes: [
           {
             'mdc-list': true,
