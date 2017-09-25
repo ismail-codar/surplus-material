@@ -2,7 +2,7 @@
   "name": "surplus-material",
   "version": "1.0.0",
   "description": "surplus material design components",
-  "main": "dist/surplus-material.js",
+  "main": "dist",
   "scripts": {
     "build": "webpack -p",
     "start": "webpack-dev-server",
@@ -12,11 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/ismail-codar/surplus-material.git"
   },
-  "keywords": [
-    "surplus",
-    "material",
-    "design"
-  ],
+  "keywords": ["surplus", "material", "design"],
   "author": "ismail codar",
   "license": "ISC",
   "bugs": {
@@ -24,16 +20,20 @@
   },
   "homepage": "https://github.com/ismail-codar/surplus-material#readme",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "extend": "^3.0.1",
     "md-date-time-picker": "^2.3.0",
     "s-js": "^0.4.5",
     "simplester": "git+https://github.com/ismail-codar/simplester.git",
     "surplus": "^0.5.0-beta1",
-    "surplus-mixins": "git+https://github.com/ismail-codar/surplus-mixins.git"
+    "surplus-mixins":
+      "file:///C:\\Users\\codar.victor\\Documents\\GitHub\\surplus-mixins"
   },
   "devDependencies": {
     "@types/node": "^8.0.28",
     "awesome-typescript-loader": "^3.2.3",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
     "loglevel": "^1.5.0",
     "surplus-loader": "^0.5.0-beta2",
     "webpack": "^3.6.0",
