@@ -1,10 +1,11 @@
-import * as Surplus from 'surplus';
-Surplus;
 import S from 's-js';
 import { DataSignal } from 's-js';
-import { MdcBaseProps, sDataValue, randomId } from './_base';
+import * as Surplus from 'surplus';
 import { attrs } from 'surplus-mixins';
 
+import { MdcBaseProps, sDataValue } from './_base';
+
+Surplus;
 export interface MdcRadioProps extends MdcBaseProps {
   name: DataSignal<string> | string;
   checked?: DataSignal<boolean> | boolean;
@@ -13,7 +14,7 @@ export interface MdcRadioProps extends MdcBaseProps {
 }
 
 export const MdcRadio = (props: MdcRadioProps) => {
-  const id = randomId(),
+  const id = 'rd_' + encodeURIComponent(sDataValue(props.label)),
     cssOnly = props.cssOnly != undefined && sDataValue(props.cssOnly),
     dom = (
       <div className="mdc-form-field">

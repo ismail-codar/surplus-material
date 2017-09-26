@@ -1,10 +1,11 @@
-import * as Surplus from 'surplus';
-Surplus;
 import S from 's-js';
 import { DataSignal } from 's-js';
-import { MdcBaseProps, randomId, sDataValue } from './_base';
-import { mixins, attrs } from 'surplus-mixins';
+import * as Surplus from 'surplus';
+import { attrs, mixins } from 'surplus-mixins';
 
+import { MdcBaseProps, sDataValue } from './_base';
+
+Surplus;
 export interface MdcTextFieldHelperProps extends MdcBaseProps {
   persistent?: DataSignal<boolean> | boolean;
   useAsValidation?: DataSignal<boolean> | boolean;
@@ -28,7 +29,7 @@ export interface MdcTextFieldProps extends MdcBaseProps {
 
 export const MdcTextField = (props: MdcTextFieldProps) => {
   const multiline = sDataValue(props.multiline),
-    id = randomId(),
+    id = 'txt_' + encodeURIComponent(sDataValue(props.label)),
     dom = (
       <div
         fn={mixins({
@@ -89,36 +90,26 @@ export const MdcTextField = (props: MdcTextFieldProps) => {
 };
 
 export const MdcTextField_Helper = (props: MdcTextFieldHelperProps) => {
-  const id = randomId(),
-    dom = (
-      <p
-        fn={mixins({
-          attrs: props.attrs,
-          styles: props.styles,
-          classes: [
-            {
-              'mdc-textfield-helptext': true,
-              'mdc-textfield-helptext--persistent': sDataValue(
-                props.persistent
-              ),
-              'mdc-textfield-helptext--validation-msg': sDataValue(
-                props.useAsValidation
-              )
-            },
-            props.classes
-          ]
-        })}
-        id={id}
-        aria-hidden="true"
-      >
-        {props.children}
-      </p>
-    );
-  window.requestAnimationFrame(() => {
-    dom.previousElementSibling.firstElementChild.setAttribute(
-      'aria-controls',
-      id
-    );
-  });
+  const dom = (
+    <p
+      fn={mixins({
+        attrs: props.attrs,
+        styles: props.styles,
+        classes: [
+          {
+            'mdc-textfield-helptext': true,
+            'mdc-textfield-helptext--persistent': sDataValue(props.persistent),
+            'mdc-textfield-helptext--validation-msg': sDataValue(
+              props.useAsValidation
+            )
+          },
+          props.classes
+        ]
+      })}
+      aria-hidden="true"
+    >
+      {props.children}
+    </p>
+  );
   return dom;
 };

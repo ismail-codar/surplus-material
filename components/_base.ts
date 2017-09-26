@@ -1,12 +1,12 @@
-import S, { DataSignal } from 's-js';
 import {
-  mixins,
-  ISurplusMixins,
   SAttributeType,
   SClassType,
   SMouseEventType,
-  SStyleType
+  SStyleType,
+  ISurplusMixins,
+  mixins
 } from 'surplus-mixins';
+import { DataSignal } from 's-js';
 
 var extend = require('extend');
 
@@ -51,8 +51,3 @@ export const propsMixins = (props: MdcBaseProps, extra: ISurplusMixins) => {
   extend(target, extra);
   return mixins(target);
 };
-
-export const randomId = () =>
-  Math.random()
-    .toString(36)
-    .substr(2, 10);
