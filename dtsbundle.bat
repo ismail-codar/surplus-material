@@ -1,0 +1,1 @@
+dts-bundle --name surplus-material --main dist/components/index.d.ts

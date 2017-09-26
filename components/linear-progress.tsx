@@ -3,10 +3,7 @@ Surplus;
 import S from 's-js';
 import { DataSignal } from 's-js';
 import { MdcBaseProps, sDataValue } from './_base';
-import onmouse from 'surplus-mixins/mouse';
-import styles from 'surplus-mixins/style';
-import classes from 'surplus-mixins/class';
-import mixins from 'surplus-mixins/all';
+import { mixins } from 'surplus-mixins';
 
 export interface MdcLinearProgressProps extends MdcBaseProps {
   progress?: DataSignal<number> | number;

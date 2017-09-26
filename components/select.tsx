@@ -3,10 +3,7 @@ Surplus;
 import S from 's-js';
 import { DataSignal } from 's-js';
 import { MdcBaseProps, sDataValue } from './_base';
-import onmouse from 'surplus-mixins/mouse';
-import styles from 'surplus-mixins/style';
-import classes from 'surplus-mixins/class';
-import mixins from 'surplus-mixins/all';
+import { mixins } from 'surplus-mixins';
 
 export interface MdcSelectProps extends MdcBaseProps {
   selectedText?: DataSignal<string> | string;
@@ -35,9 +32,7 @@ export const MdcSelect = (props: MdcSelectProps) => {
         {sDataValue(props.selectedText)}
       </span>
       <div className="mdc-simple-menu mdc-select__menu">
-        <ul className="mdc-list mdc-simple-menu__items">
-          {props.children}
-        </ul>
+        <ul className="mdc-list mdc-simple-menu__items">{props.children}</ul>
       </div>
     </div>
   );
@@ -53,7 +48,7 @@ export const MdcSelect = (props: MdcSelectProps) => {
   return dom;
 };
 
-export const MdcSelect_Item = (props: MdcSelectItemProps) =>
+export const MdcSelect_Item = (props: MdcSelectItemProps) => (
   <li
     fn={mixins({
       attrs: [{ role: 'option', 'aria-disabled': props.group }, props.attrs],
@@ -70,4 +65,5 @@ export const MdcSelect_Item = (props: MdcSelectItemProps) =>
     data={props.data}
   >
     {props.children}
-  </li>;
+  </li>
+);

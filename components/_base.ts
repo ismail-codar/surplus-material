@@ -1,9 +1,13 @@
 import S, { DataSignal } from 's-js';
-import { SStyleType } from 'surplus-mixins/style';
-import { SMouseEventType } from 'surplus-mixins/mouse';
-import { SClassType } from 'surplus-mixins/class';
-import { SAttributeType } from 'surplus-mixins/attribute';
-import mixins, { ISurplusMixins } from 'surplus-mixins/all';
+import {
+  mixins,
+  ISurplusMixins,
+  SAttributeType,
+  SClassType,
+  SMouseEventType,
+  SStyleType
+} from 'surplus-mixins';
+
 var extend = require('extend');
 
 export type MdcIntentitonType = '' | 'primary' | 'accent';

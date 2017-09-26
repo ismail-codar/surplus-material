@@ -3,11 +3,7 @@ Surplus;
 import S from 's-js';
 import { DataSignal } from 's-js';
 import { MdcBaseProps, randomId, sDataValue } from './_base';
-import onmouse from 'surplus-mixins/mouse';
-import styles from 'surplus-mixins/style';
-import classes from 'surplus-mixins/class';
-import attrs from 'surplus-mixins/attribute';
-import mixins from 'surplus-mixins/all';
+import { mixins, attrs } from 'surplus-mixins';
 
 export interface MdcTextFieldHelperProps extends MdcBaseProps {
   persistent?: DataSignal<boolean> | boolean;
@@ -71,7 +67,7 @@ export const MdcTextField = (props: MdcTextFieldProps) => {
             type={sDataValue(props.type) || 'text'}
             className="mdc-textfield__input"
             name={sDataValue(props.name)}
-            {...attrs({
+            fn={attrs({
               autocomplete: sDataValue(props.autocomplete),
               pattern: sDataValue(props.pattern)
             })}
@@ -82,7 +78,7 @@ export const MdcTextField = (props: MdcTextFieldProps) => {
             }}
           />
         )}
-        <label {...attrs({ for: id })} className="mdc-textfield__label">
+        <label fn={attrs({ for: id })} className="mdc-textfield__label">
           {props.label}
         </label>
       </div>

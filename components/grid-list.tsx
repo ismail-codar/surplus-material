@@ -3,10 +3,7 @@ Surplus;
 import S from 's-js';
 import { DataSignal } from 's-js';
 import { MdcBaseProps, sDataValue } from './_base';
-import onmouse from 'surplus-mixins/mouse';
-import styles from 'surplus-mixins/style';
-import classes from 'surplus-mixins/class';
-import mixins from 'surplus-mixins/all';
+import { mixins } from 'surplus-mixins';
 
 export type GridListStartEndType = 'start' | 'end';
 export type GridListAspect = '16x9' | '3x2' | '2x3' | '4x3' | '3x4';

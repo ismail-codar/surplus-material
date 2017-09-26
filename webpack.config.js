@@ -17,11 +17,12 @@ const isProd = process.argv.indexOf('-p') !== -1;
 const webpackConfig = {
   entry: isProd
     ? {
-        index: './components/index.ts'
+        main: './components/index.ts'
       }
     : { app: './demo/app.ts' },
   output: {
-    filename: isProd ? 'dist/[name].js' : '[name].js'
+    filename: isProd ? 'dist/[name].js' : '[name].js',
+    libraryTarget: 'umd'
   },
   target: isProd ? 'node' : undefined,
   externals: isProd ? nodeExternals() : undefined,

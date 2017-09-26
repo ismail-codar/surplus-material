@@ -3,7 +3,7 @@ Surplus;
 import S from 's-js';
 import { DataSignal } from 's-js';
 import { MdcBaseProps, sDataValue, flattenChilds } from './_base';
-import mixins from 'surplus-mixins/all';
+import { mixins } from 'surplus-mixins';
 
 export interface MdcListProps extends MdcBaseProps {
   rippleEffect?: DataSignal<boolean> | boolean;
