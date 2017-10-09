@@ -29,7 +29,6 @@ export interface MdcTextFieldProps extends MdcBaseProps {
 
 export const MdcTextField = (props: MdcTextFieldProps) => {
   const multiline = sDataValue(props.multiline),
-    id = 'txt_' + encodeURIComponent(sDataValue(props.label)),
     dom = (
       <div
         fn={mixins({
@@ -49,7 +48,6 @@ export const MdcTextField = (props: MdcTextFieldProps) => {
       >
         {multiline ? (
           <textarea
-            id={id}
             className="mdc-textfield__input"
             name={sDataValue(props.name)}
             {...attrs({
@@ -64,7 +62,6 @@ export const MdcTextField = (props: MdcTextFieldProps) => {
           </textarea>
         ) : (
           <input
-            id={id}
             type={sDataValue(props.type) || 'text'}
             className="mdc-textfield__input"
             name={sDataValue(props.name)}
@@ -79,9 +76,7 @@ export const MdcTextField = (props: MdcTextFieldProps) => {
             }}
           />
         )}
-        <label fn={attrs({ for: id })} className="mdc-textfield__label">
-          {props.label}
-        </label>
+        <label className="mdc-textfield__label">{props.label}</label>
       </div>
     ),
     textfield = new window['mdc'].textfield.MDCTextfield(dom);

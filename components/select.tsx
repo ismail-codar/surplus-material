@@ -1,13 +1,15 @@
-import * as Surplus from 'surplus';
-Surplus;
 import S from 's-js';
 import { DataSignal } from 's-js';
-import { MdcBaseProps, sDataValue } from './_base';
-import { mixins } from 'surplus-mixins';
+import * as Surplus from 'surplus';
+import { mixins, styles } from 'surplus-mixins';
 
+import { MdcBaseProps, sDataValue } from './_base';
+
+Surplus;
 export interface MdcSelectProps extends MdcBaseProps {
   selectedText?: DataSignal<string> | string;
   cssOnly?: boolean;
+  label?: DataSignal<string> | string;
 }
 export interface MdcSelectItemProps extends MdcBaseProps {
   data?: any;
@@ -28,12 +30,23 @@ export const MdcSelect = (props: MdcSelectProps) => {
         ]
       })}
     >
-      <span className="mdc-select__selected-text">
+      <span
+        className="mdc-select__selected-text"
+        fn={styles({ position: 'absolute' })}
+      >
         {sDataValue(props.selectedText)}
       </span>
       <div className="mdc-simple-menu mdc-select__menu">
         <ul className="mdc-list mdc-simple-menu__items">{props.children}</ul>
       </div>
+      {props.label == null ? null : (
+        <label
+          className="mdc-textfield__label mdc-textfield__label--float-above"
+          fn={styles({ position: 'relative', marginTop: '45px' })}
+        >
+          {sDataValue(props.label)}
+        </label>
+      )}
     </div>
   );
   let select = null;

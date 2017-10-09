@@ -1,10 +1,11 @@
-import * as Surplus from 'surplus';
-Surplus;
 import S from 's-js';
 import { DataSignal } from 's-js';
-import { MdcBaseProps, sDataValue, propsMixins } from './_base';
+import * as Surplus from 'surplus';
 import { mixins } from 'surplus-mixins';
 
+import { MdcBaseProps, propsMixins, sDataValue } from './_base';
+
+Surplus;
 export interface MdcToolbarItemProps extends MdcBaseProps {
   type: 'menuicon' | 'title' | 'linkicon';
   text?: DataSignal<string> | string;
@@ -80,7 +81,8 @@ const MdcToolbar_Item = (props: MdcToolbarItemProps) => {
               'mdc-toolbar__icon': true
             },
             props.classes
-          ]
+          ],
+          onmouse: props.mouseEvents
         })}
         href={sDataValue(props.href)}
         aria-label={sDataValue(props.text)}
@@ -147,9 +149,11 @@ export const MdcToolbar = (props: MdcToolbarProps) => {
               classes: [{ 'mdc-toolbar__row': true }, props.classes]
             })}
           >
-            {toolbarRow.sections.map(section => (
-              <MdcToolbar_Section {...section} />
-            ))}
+            {toolbarRow.sections ? (
+              toolbarRow.sections.map(section => (
+                <MdcToolbar_Section {...section} />
+              ))
+            ) : null}
           </div>
         ))}
       </header>

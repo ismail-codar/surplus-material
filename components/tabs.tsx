@@ -1,10 +1,11 @@
-import * as Surplus from 'surplus';
-Surplus;
 import S from 's-js';
 import { DataSignal } from 's-js';
-import { MdcBaseProps, sDataValue } from './_base';
+import * as Surplus from 'surplus';
 import { mixins } from 'surplus-mixins';
 
+import { MdcBaseProps, sDataValue } from './_base';
+
+Surplus;
 export interface MdcTabsProps extends MdcBaseProps {
   scrollable?: boolean;
   onChange?: (tab) => void;
@@ -104,9 +105,10 @@ export const MdcTab_Item = (props: MdcTabItemProps) => (
           'mdc-tab': true
         },
         props.classes
-      ]
+      ],
+      onmouse: props.mouseEvents
     })}
-    href={sDataValue(props.href)}
+    data-href={sDataValue(props.href)}
   >
     {props.materialIcon ? (
       <i
