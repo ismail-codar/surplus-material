@@ -3,16 +3,17 @@ import { DataSignal } from 's-js';
 import * as Surplus from 'surplus';
 import { mixins, styles } from 'surplus-mixins';
 
-import { MdcBaseProps, sDataValue } from './_base';
+import { flattenChilds, MdcBaseProps, sDataValue } from './_base';
 
 Surplus;
 export interface MdcSelectProps extends MdcBaseProps {
   selectedText?: DataSignal<string> | string;
   cssOnly?: boolean;
   label?: DataSignal<string> | string;
+  value?: DataSignal<any>;
 }
 export interface MdcSelectItemProps extends MdcBaseProps {
-  data?: any;
+  value?: any;
   group?: boolean;
 }
 
@@ -55,6 +56,21 @@ export const MdcSelect = (props: MdcSelectProps) => {
       props.cssOnly === undefined || props.cssOnly
         ? window['mdc'].select.MDCSelect.attachTo(dom)
         : null;
+    if (select) {
+      if (props.value) {
+        select.listen('MDCSelect:change', () => {
+          props.value(select.selectedOptions[0].data);
+        });
+        if (props.value() != null) {
+          let idx = -1;
+          (flattenChilds(props.children) as HTMLElement[]).find(child => {
+            idx++;
+            return child['data'] === props.value();
+          });
+          select.foundation_.setSelectedIndex(idx);
+        }
+      }
+    }
   });
   S.cleanup(() => select && select.destroy());
 
@@ -75,7 +91,7 @@ export const MdcSelect_Item = (props: MdcSelectItemProps) => (
       ]
     })}
     role="option"
-    data={props.data}
+    data={props.value}
   >
     {props.children}
   </li>

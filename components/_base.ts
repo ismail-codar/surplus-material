@@ -1,11 +1,4 @@
-import {
-  SAttributeType,
-  SClassType,
-  SMouseEventType,
-  SStyleType,
-  ISurplusMixins,
-  mixins
-} from 'surplus-mixins';
+import { SAttributeType, SClassType, SMouseEventType, SStyleType, ISurplusMixins, mixins } from 'surplus-mixins';
 import { DataSignal } from 's-js';
 
 var extend = require('extend');
@@ -32,8 +25,12 @@ export interface MdcBaseProps {
 export const sDataValue = <T>(val: DataSignal<T> | T): T => {
   return typeof val == 'function' ? (val as any)() : val;
 };
+// export const sDataSetValue = (obj, property: string, value: any): void => {
+//   if (typeof obj[property] === 'function') (obj[property] as any)(value);
+//   else obj[property] = value;
+// };
 
-export const flattenChilds = arr => {
+export const flattenChilds = (arr): HTMLElement[] => {
   return arr.reduce(function(flat, toFlatten) {
     return flat.concat(
       Array.isArray(toFlatten) ? flattenChilds(toFlatten) : toFlatten

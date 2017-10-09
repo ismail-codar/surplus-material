@@ -20,16 +20,13 @@ export interface MdcTextFieldProps extends MdcBaseProps {
   fullwidth?: DataSignal<boolean> | boolean;
   autocomplete?: DataSignal<string> | string;
   required?: DataSignal<boolean> | boolean;
-  multiline?:
-    | DataSignal<{ cols?: number; rows: number }>
-    | { cols?: number; rows: number };
+  multiline?: { cols?: number; rows: number };
   label: DataSignal<string> | string;
-  value?: DataSignal<string> | string;
+  value?: DataSignal<any>;
 }
 
 export const MdcTextField = (props: MdcTextFieldProps) => {
-  const multiline = sDataValue(props.multiline),
-    dom = (
+  const dom = (
       <div
         fn={mixins({
           attrs: props.attrs,
@@ -40,13 +37,13 @@ export const MdcTextField = (props: MdcTextFieldProps) => {
               'mdc-textfield--dense': sDataValue(props.dense),
               'mdc-textfield--box': sDataValue(props.box),
               'mdc-textfield--fullwidth': sDataValue(props.fullwidth),
-              'mdc-textfield--multiline': multiline != null
+              'mdc-textfield--multiline': props.multiline != null
             },
             props.classes
           ]
         })}
       >
-        {multiline ? (
+        {props.multiline ? (
           <textarea
             className="mdc-textfield__input"
             name={sDataValue(props.name)}
@@ -55,8 +52,8 @@ export const MdcTextField = (props: MdcTextFieldProps) => {
               pattern: sDataValue(props.pattern)
             })}
             required={sDataValue(props.required)}
-            cols={multiline.cols}
-            rows={multiline.rows}
+            cols={props.multiline.cols}
+            rows={props.multiline.rows}
           >
             {sDataValue(props.value) || ''}
           </textarea>
@@ -72,7 +69,7 @@ export const MdcTextField = (props: MdcTextFieldProps) => {
             required={sDataValue(props.required)}
             value={sDataValue(props.value) || ''}
             onInput={e => {
-              (props.value as any)(e.target['value']);
+              props.value(e.target['value']);
             }}
           />
         )}
