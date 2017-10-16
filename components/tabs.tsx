@@ -90,7 +90,7 @@ export const MdcTabs = (props: MdcTabsProps) => {
       tabs = new window['mdc'].tabs.MDCTabBar(dom);
       tabs.listen('MDCTabBar:change', props.onChange);
     });
-    S.cleanup(() => tabs.destroy());
+    S.cleanup(() => tabs && tabs.destroy());
     return dom;
   }
 };

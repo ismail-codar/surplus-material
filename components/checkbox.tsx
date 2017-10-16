@@ -1,15 +1,19 @@
-import * as Surplus from 'surplus';
-Surplus;
 import S from 's-js';
 import { DataSignal } from 's-js';
-import { MdcBaseProps, sDataValue } from './_base';
+import * as Surplus from 'surplus';
 import { mixins } from 'surplus-mixins';
 
+import { MdcBaseProps, sDataValue } from './_base';
+
+Surplus;
 //TODO surlus svg support: https://github.com/Matt-Esch/virtual-dom/blob/master/virtual-hyperscript/hooks/attribute-hook.js
 
 export interface MdcCheckboxProps extends MdcBaseProps {
+  id?: string;
   dark?: DataSignal<boolean> | boolean;
   cssOnly?: DataSignal<boolean> | boolean;
+  value: DataSignal<any>;
+  checked: DataSignal<boolean>;
 }
 //global.mdc.checkbox.MDCCheckbox
 export const MdcCheckbox = (props: MdcCheckboxProps) => {
@@ -33,7 +37,11 @@ export const MdcCheckbox = (props: MdcCheckboxProps) => {
           ]
         })}
       >
-        <input type="checkbox" className="mdc-checkbox__native-control" />
+        <input
+          id={props.id}
+          type="checkbox"
+          className="mdc-checkbox__native-control"
+        />
         <div className="mdc-checkbox__background">
           <svg viewBox="0 0 24 24" className="mdc-checkbox__checkmark">
             <path
@@ -47,10 +55,15 @@ export const MdcCheckbox = (props: MdcCheckboxProps) => {
         </div>
       </div>
     ),
-    checkbox =
-      sDataValue(props.cssOnly) == false
-        ? new window['mdc'].checkbox.MDCCheckbox(dom)
-        : null;
-  S.cleanup(() => checkbox && checkbox.destroy());
+    checkbox = !sDataValue(props.cssOnly)
+      ? new window['mdc'].checkbox.MDCCheckbox(dom)
+      : null;
+  if (checkbox) {
+    checkbox.foundation_.adapter_.registerChangeHandler(() => {
+      props.checked(checkbox.checked);
+    });
+    checkbox.checked = props.checked();
+    S.cleanup(() => checkbox && checkbox.destroy());
+  }
   return dom;
 };

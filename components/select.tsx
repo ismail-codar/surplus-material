@@ -59,13 +59,13 @@ export const MdcSelect = (props: MdcSelectProps) => {
     if (select) {
       if (props.value) {
         select.listen('MDCSelect:change', () => {
-          props.value(select.selectedOptions[0].data);
+          props.value(sDataValue(select.selectedOptions[0].data));
         });
         if (props.value() != null) {
           let idx = -1;
           (flattenChilds(props.children) as HTMLElement[]).find(child => {
             idx++;
-            return child['data'] === props.value();
+            return sDataValue(child['data']) == props.value();
           });
           select.foundation_.setSelectedIndex(idx);
         }
